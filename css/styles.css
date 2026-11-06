@@ -1,0 +1,50 @@
+:root{
+  --bg:#0f172a;--card:#1e293b;--elev:#334155;--accent:#f59e0b;--accent-p:#d97706;
+  --ok:#22c55e;--danger:#ef4444;--text:#f1f5f9;--muted:#94a3b8;--border:#475569;
+  --r:12px;--rb:10px;--pad:16px;--gap:12px;
+  --font:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased;font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.5}
+body{min-height:100dvh;max-width:480px;margin:0 auto;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+.header{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:12px var(--pad);background:var(--bg);border-bottom:1px solid var(--border)}
+.app-title{font-size:1.15rem;font-weight:700;color:var(--accent)}
+.icon-btn{background:none;border:none;color:var(--muted);font-size:1.25rem;padding:8px;min-width:44px;min-height:44px;cursor:pointer}
+.main{padding:var(--pad);display:flex;flex-direction:column;gap:var(--gap)}
+.card{background:var(--card);border-radius:var(--r);padding:var(--pad);border:1px solid transparent}
+.card.selected,.lift-card.active{border-color:var(--accent)}
+.card-title{font-size:.75rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.search-wrap{display:flex;gap:8px}
+input[type=search],input[type=text]{flex:1;background:var(--bg);border:1.5px solid var(--border);border-radius:var(--rb);padding:12px 14px;color:var(--text);font-size:1rem;min-height:44px}
+input:focus{outline:none;border-color:var(--accent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:var(--rb);font-weight:600;font-size:.95rem;border:none;cursor:pointer;min-height:44px;transition:transform .15s}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:var(--accent);color:var(--bg);width:100%}
+.btn-primary:disabled{opacity:.5}
+.btn-outline{background:transparent;border:1.5px solid var(--border);color:var(--text)}
+.btn-sm{padding:8px 12px;font-size:.85rem}
+.btn-group{display:flex;gap:8px}.btn-group .btn{flex:1}
+.list{display:flex;flex-direction:column;gap:10px}
+.item{display:flex;align-items:center;gap:12px;padding:12px;background:var(--card);border-radius:var(--r);cursor:pointer;border:1.5px solid transparent;transition:border-color .15s}
+.item:active,.item:hover{border-color:var(--accent)}
+.item img{width:48px;height:48px;border-radius:50%;object-fit:cover;background:var(--elev)}
+.item-info{flex:1;min-width:0}
+.item-name{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.item-meta{font-size:.8rem;color:var(--muted)}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;background:var(--accent);color:var(--bg);font-size:.7rem;font-weight:700}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stat{background:var(--elev);border-radius:var(--rb);padding:12px;text-align:center}
+.stat-val{font-size:1.4rem;font-weight:700;color:var(--accent)}
+.stat-label{font-size:.72rem;color:var(--muted);text-transform:uppercase}
+.note{background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.25);border-radius:var(--rb);padding:12px;font-size:.85rem;color:var(--muted)}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--elev);color:var(--text);padding:10px 18px;border-radius:var(--rb);font-size:.9rem;z-index:50;box-shadow:0 4px 12px rgba(0,0,0,.4)}
+.loading{text-align:center;padding:32px;color:var(--muted)}
+.spinner{width:28px;height:28px;border:3px solid var(--elev);border-top-color:var(--accent);border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 12px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.back{margin-bottom:8px}
+.empty{text-align:center;padding:40px 16px;color:var(--muted)}
+h2{font-size:1.25rem;font-weight:700;color:var(--accent);margin-bottom:4px}
+.section{margin-top:8px}
+ul.simple{list-style:none}
+ul.simple li{padding:8px 0;border-bottom:1px solid var(--border);font-size:.9rem}
+ul.simple li:last-child{border:none}
