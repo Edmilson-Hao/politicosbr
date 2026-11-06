@@ -1,4 +1,4 @@
-const CACHE = 'politicosbr-v1';
+const CACHE = 'politicosbr-v2';
 const ASSETS = [
   './',
   './index.html',
